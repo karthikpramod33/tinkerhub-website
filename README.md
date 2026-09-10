@@ -1,3 +1,4 @@
+
 # TinkerHub Website
 
 A Next.js 14 (App Router) + TypeScript + Tailwind site for a college TinkerHub chapter.
@@ -55,3 +56,7 @@ paths in the `data/` files.
 - Fonts (Space Grotesk, Inter, JetBrains Mono) load via `next/font/google`, so they're
   self-hosted automatically at build time — no extra setup needed, but it does require
   network access during `next build`/`next dev` the first time to fetch the font files.
+
+# tinkerhub-website
+A website showcasing the TinkerHub community, activities, events, team and memories at my college.
+ ddbc4f866a3c90bf1e571b873e7498964345a75c
