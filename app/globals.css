@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #ffffff;
+}
+
+::selection {
+  background: #ec7fb0;
+  color: #ffffff;
+}
+
+/* soft dotted backdrop, used instead of a technical grid */
+.bg-tech-grid {
+  background-image: radial-gradient(#e0defe 1.4px, transparent 1.4px);
+  background-size: 26px 26px;
+  background-position: -6px -6px;
+}
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* card tilt on hover */
+.tilt-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.tilt-card:hover {
+  transform: perspective(800px) rotateX(2deg) rotateY(-2deg) translateY(-4px);
+  box-shadow: 0 18px 32px -18px rgba(36, 34, 51, 0.18);
+}
+
+/* thin scrollbar for horizontal scroll sections */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #e7e5f0;
+  border-radius: 999px;
+}
+
+/* animated bus driving in from the left */
+@keyframes drive-in {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.bus-drive-in {
+  animation: drive-in 0.7s ease-out both;
+}
+@keyframes wheel-spin {
+  to { transform: rotate(360deg); }
+}
+.wheel-spin {
+  animation: wheel-spin 1.4s linear infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
